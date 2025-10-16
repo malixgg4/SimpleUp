@@ -1,0 +1,349 @@
+/* Секция проблем */
+.problems-section {
+    background: rgba(15, 8, 36, 0.95);
+    padding: 80px 0;
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid rgba(103, 58, 183, 0.3);
+}
+
+.problems-content {
+    text-align: center;
+}
+
+.problems-title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 60px;
+    color: #ffffff;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* Базовые стили для кубиков */
+.problem-card {
+    padding: 35px 30px;
+    border-radius: 20px;
+    text-align: left;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.problem-card.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Чередование прозраный/залитый */
+.problem-card:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.problem-card:nth-child(even) {
+    background: rgba(103, 58, 183, 0.15);
+    border: 1px solid rgba(103, 58, 183, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+/* Эффекты при наведении */
+.problem-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(103, 58, 183, 0.25);
+}
+
+.problem-card:nth-child(odd):hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.problem-card:nth-child(even):hover {
+    background: rgba(103, 58, 183, 0.2);
+}
+
+/* Полоска слева для всех карточек */
+.problem-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(135deg, #ec008c, #673ab7);
+}
+
+/* Заголовок карточки */
+.problem-card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+/* Описание карточки */
+.problem-card-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #cccccc;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Белый блок для текста */
+.problems-footer-block {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.problems-footer-block.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.problems-footer-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(135deg, #ec008c, #673ab7);
+}
+
+.problems-footer-text {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #190f32;
+    font-weight: 600;
+    margin: 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Эффект при наведении на белый блок */
+.problems-footer-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+/* Белый блок для текста с стрелочкой */
+.problems-footer-block {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+}
+
+.problems-footer-block.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.problems-footer-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(135deg, #ec008c, #673ab7);
+}
+
+/* Стрелочка как на картинке */
+.problems-footer-block::after {
+    content: '→';
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    font-weight: 700;
+    color: #673ab7;
+    transition: all 0.3s ease;
+}
+
+.problems-footer-text {
+    font-size: 20px;
+    line-height: 1.5;
+    color: #190f32;
+    font-weight: 600;
+    margin: 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 40px; /* Место для стрелочки */
+    position: relative;
+}
+
+/* Эффекты при наведении */
+.problems-footer-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.problems-footer-block:hover::after {
+    transform: translateY(-50%) translateX(5px);
+    color: #ec008c;
+}
+
+/* Анимация стрелочки при наведении */
+.problems-footer-block:hover .problems-footer-text {
+    color: #673ab7;
+}
+
+/* Адаптивность для белого блока */
+@media (max-width: 768px) {
+    .problems-footer-block {
+        padding: 35px 25px;
+    }
+    
+    .problems-footer-block::after {
+        right: 20px;
+        font-size: 20px;
+    }
+    
+    .problems-footer-text {
+        font-size: 17px;
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .problems-footer-block {
+        padding: 30px 20px;
+    }
+    
+    .problems-footer-block::after {
+        right: 15px;
+        font-size: 18px;
+    }
+    
+    .problems-footer-text {
+        font-size: 16px;
+        padding-right: 25px;
+    }
+}
+
+/* Адаптивность для секции проблем */
+@media (max-width: 1024px) {
+    .problems-title {
+        font-size: 28px;
+    }
+    
+    .problems-grid {
+        gap: 20px;
+    }
+    
+    .problem-card {
+        padding: 30px 25px;
+        min-height: 160px;
+    }
+    
+    .problems-footer-block {
+        padding: 40px 30px;
+    }
+    
+    .problems-footer-text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .problems-section {
+        padding: 60px 0;
+    }
+    
+    .problems-title {
+        font-size: 24px;
+        margin-bottom: 40px;
+    }
+    
+    .problems-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .problem-card {
+        padding: 25px 20px;
+        min-height: 140px;
+    }
+    
+    .problem-card-title {
+        font-size: 18px;
+    }
+    
+    .problem-card-description {
+        font-size: 15px;
+    }
+    
+    .problems-footer-block {
+        padding: 35px 25px;
+    }
+    
+    .problems-footer-text {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+    .problems-section {
+        padding: 50px 0;
+    }
+    
+    .problems-title {
+        font-size: 22px;
+    }
+    
+    .problem-card {
+        padding: 20px;
+        min-height: 130px;
+    }
+    
+    .problem-card-title {
+        font-size: 17px;
+    }
+    
+    .problems-footer-block {
+        padding: 30px 20px;
+    }
+    
+    .problems-footer-text {
+        font-size: 16px;
+    }
+}
+

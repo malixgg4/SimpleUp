@@ -1,0 +1,302 @@
+/* Секция формы */
+.form-section {
+    background: linear-gradient(135deg, #0f0824 0%, #1a0f3a 100%);
+    padding: 120px 0 80px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 2;
+}
+
+.form-container {
+    max-width: 480px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Заголовок формы */
+.form-main-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #190f32;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-subtitle {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+/* Форма */
+.contact-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #190f32;
+    margin-bottom: 8px;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    font-family: 'Arial', sans-serif;
+}
+
+.form-input:focus,
+.form-select:focus {
+    border-color: #673ab7;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(103, 58, 183, 0.1);
+}
+
+.form-input::placeholder {
+    color: #999;
+}
+
+/* Кастомный селект */
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23666' stroke-width='2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 12px 8px;
+    cursor: pointer;
+}
+
+/* Чекбокс политики конфиденциальности */
+.form-privacy {
+    margin: 30px 0;
+}
+
+.privacy-checkbox {
+    display: flex;
+    align-items: flex-start;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+}
+
+.privacy-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.privacy-checkbox input:checked + .checkmark {
+    background: #673ab7;
+    border-color: #673ab7;
+}
+
+.privacy-checkbox input:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.privacy-checkbox:hover input:not(:checked) + .checkmark {
+    border-color: #673ab7;
+}
+
+/* Кнопка отправки */
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ec008c, #673ab7);
+    color: #ffffff;
+    border: none;
+    padding: 18px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(103, 58, 183, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Подключение шрифтов для формы */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.form-container {
+    font-family: 'Inter', sans-serif;
+}
+
+.form-main-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    letter-spacing: 0.8px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.form-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+    line-height: 1.5;
+}
+
+.form-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: -0.1px;
+}
+
+.form-input,
+.form-select {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.form-input::placeholder {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: -0.2px;
+}
+
+.privacy-checkbox {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: -0.1px;
+    line-height: 1.4;
+}
+
+.submit-btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+/* Адаптивность формы */
+@media (max-width: 768px) {
+    .form-section {
+        padding: 100px 0 60px;
+    }
+    
+    .form-container {
+        padding: 40px 30px;
+        margin: 0 20px;
+    }
+    
+    .form-main-title {
+        font-size: 22px;
+    }
+    
+    .form-subtitle {
+        font-size: 15px;
+    }
+    
+    .form-input,
+    .form-select {
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 30px 25px;
+    }
+    
+    .form-main-title {
+        font-size: 20px;
+    }
+    
+    .form-subtitle {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    
+    .form-input,
+    .form-select {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+    
+    .submit-btn {
+        padding: 16px 25px;
+        font-size: 15px;
+    }
+    
+    .privacy-checkbox {
+        font-size: 11px;
+    }
+}
